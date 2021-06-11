@@ -70,8 +70,9 @@ class AttributionPresenter private constructor(
         private var licenseLayout = 0
         private var onAttributionClickListener: OnAttributionClickListener? = null
         private var onLicenseClickListener: OnLicenseClickListener? = null
+
         fun addAttributions(vararg attributions: Attribution?): Builder {
-            this.attributions.addAll(Arrays.asList(*attributions))
+            this.attributions.addAll(listOf(*attributions))
             return this
         }
 
@@ -143,8 +144,12 @@ class AttributionPresenter private constructor(
 
     init {
         this.itemLayout = if (itemLayout == 0) R.layout.default_item_attribution else itemLayout
-        this.licenseLayout =
-            if (licenseLayout == 0) R.layout.default_license_text else licenseLayout
+        this.licenseLayout = if (licenseLayout == 0){
+                R.layout.default_license_text
+            }
+            else {
+                licenseLayout
+            }
         this.onAttributionClickListener = onAttributionClickListener
         this.onLicenseClickListener = onLicenseClickListener
     }

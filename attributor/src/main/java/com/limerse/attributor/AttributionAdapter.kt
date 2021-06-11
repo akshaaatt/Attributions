@@ -1,12 +1,13 @@
 package com.limerse.attributor
 
 import android.content.Context
-import androidx.annotation.LayoutRes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.annotation.LayoutRes
+import androidx.annotation.Nullable
 import com.limerse.attributions.R
 import com.limerse.attributor.entities.Attribution
 import com.limerse.attributor.entities.LicenseInfo
@@ -15,6 +16,7 @@ import com.limerse.attributor.listeners.OnLicenseClickListener
 import com.limerse.attributor.util.BrowserOpener.open
 import java.util.*
 
+
 /**
  * Adapter used to show attributions on a ListView.
  */
@@ -22,9 +24,10 @@ class AttributionAdapter internal constructor(
     attributions: Collection<Attribution>,
     @LayoutRes itemLayout: Int,
     @LayoutRes licenseLayout: Int,
-    onAttributionClickListener: OnAttributionClickListener?,
-    onLicenseClickListener: OnLicenseClickListener?
-) : BaseAdapter() {
+    @Nullable onAttributionClickListener: OnAttributionClickListener?,
+    @Nullable onLicenseClickListener: OnLicenseClickListener?
+) :
+    BaseAdapter() {
     private val items: MutableList<Attribution>
 
     @LayoutRes
@@ -32,7 +35,11 @@ class AttributionAdapter internal constructor(
 
     @LayoutRes
     private val licenseLayout: Int
+
+    @Nullable
     private val onAttributionClickListener: OnAttributionClickListener?
+
+    @Nullable
     private val onLicenseClickListener: OnLicenseClickListener?
     override fun getCount(): Int {
         return items.size
@@ -46,8 +53,26 @@ class AttributionAdapter internal constructor(
         return position.toLong()
     }
 
-    override fun getView(position: Int, convertView: View, parent: ViewGroup): View {
-        val holder: ViewHolder = convertView.tag as ViewHolder
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
+        var convertView = convertView
+        val holder: ViewHolder
+        if (convertView == null) {
+            convertView = LayoutInflater.from(parent.context).inflate(itemLayout, parent, false)
+            holder = ViewHolder()
+            holder.name = convertView.findViewById<View>(R.id.name) as TextView
+            holder.copyrightNotices =
+                convertView.findViewById<View>(R.id.copyrightNotices) as TextView
+            holder.licensesLayout = convertView.findViewById<View>(R.id.licensesLayout) as ViewGroup
+            check(!(holder.name == null || holder.copyrightNotices == null || holder.licensesLayout == null)) {
+                """Item layout must contain all of the following required views:
+  - TextView with android:id="@+id/name"
+  - TextView with android:id="@+id/copyrightNotices"
+  - ViewGroup descendant with android:id="@+id/licensesLayout""""
+            }
+            convertView.tag = holder
+        } else {
+            holder = convertView.tag as ViewHolder
+        }
         val attribution = getItem(position)
         holder.name!!.text = attribution.name
         holder.copyrightNotices!!.text = attribution.formattedCopyrightNotices
@@ -55,7 +80,7 @@ class AttributionAdapter internal constructor(
         for (licenseInfo in attribution.licensesInfo) {
             addLicense(parent.context, holder.licensesLayout, licenseInfo)
         }
-        convertView.setOnClickListener {
+        convertView!!.setOnClickListener {
             if (onAttributionClickListener == null ||
                 !onAttributionClickListener.onAttributionClick(attribution)
             ) {
@@ -72,7 +97,9 @@ class AttributionAdapter internal constructor(
             ?: throw IllegalStateException("LicenseInfo layout does not contain a required TextView with android:id=\"@+id/licenseInfo\"")
         licenseTextView.text = licenseInfo.name
         licenseTextView.setOnClickListener {
-            if (onLicenseClickListener == null || !onLicenseClickListener.onLicenseClick(licenseInfo)) {
+            if (onLicenseClickListener == null ||
+                !onLicenseClickListener.onLicenseClick(licenseInfo)
+            ) {
                 open(context, licenseInfo.textUrl)
             }
         }

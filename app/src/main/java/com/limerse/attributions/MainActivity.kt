@@ -24,17 +24,17 @@ class MainActivity : AppCompatActivity() {
 
         val openActivity = findViewById<View>(R.id.openActivity) as Button
         openActivity.setOnClickListener {
-            val intent = Intent(this@MainActivity, ListActivity::class.java)
+            val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
         }
         val openDarkActivity = findViewById<View>(R.id.openDarkActivity) as Button
         openDarkActivity.setOnClickListener {
-            val intent = Intent(this@MainActivity, DarkListActivity::class.java)
+            val intent = Intent(this, DarkListActivity::class.java)
             startActivity(intent)
         }
         val openCustomActivity = findViewById<View>(R.id.openCustomActivity) as Button
         openCustomActivity.setOnClickListener {
-            val intent = Intent(this@MainActivity, CustomListActivity::class.java)
+            val intent = Intent(this, CustomListActivity::class.java)
             startActivity(intent)
         }
     }
