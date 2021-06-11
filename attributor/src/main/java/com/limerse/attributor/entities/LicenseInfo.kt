@@ -5,11 +5,10 @@ class LicenseInfo constructor(val name: String, val textUrl: String) {
         return name
     }
 
-    override fun equals(o: Any?): Boolean {
-        if (this === o) return true
-        if (o !is LicenseInfo) return false
-        val that = o
-        return if (name != that.name) false else textUrl == that.textUrl
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is LicenseInfo) return false
+        return if (name != other.name) false else textUrl == other.textUrl
     }
 
     override fun hashCode(): Int {

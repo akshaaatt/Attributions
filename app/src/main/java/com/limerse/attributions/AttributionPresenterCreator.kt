@@ -6,12 +6,12 @@ import com.limerse.attributor.entities.Library
 import com.limerse.attributor.entities.License
 import com.limerse.attributor.listeners.OnAttributionClickListener
 import com.limerse.attributor.listeners.OnLicenseClickListener
-import com.limerse.attributor.AttributionPresenter
+import com.limerse.attributor.Attributor
 
 object AttributionPresenterCreator {
 
-    private fun createBaseAttributions(context: Context): AttributionPresenter.Builder {
-        return AttributionPresenter.Builder(context)
+    private fun createBaseAttributions(context: Context): Attributor.Builder {
+        return Attributor.Builder(context)
             .addAttributions(
                 Attribution.Builder("AttributionPresenter")
                     .addCopyrightNotice("Copyright 2017 Francisco José Montiel Navarro")
@@ -20,30 +20,24 @@ object AttributionPresenterCreator {
                     .build()
             )
             .addAttributions(
-                Library.BUTTER_KNIFE,
                 Library.GLIDE,
                 Library.DAGGER_2,
                 Library.GSON,
-                Library.REALM
             )
     }
 
-    fun create(context: Context): AttributionPresenter {
+    fun create(context: Context): Attributor {
         return createBaseAttributions(context).build()
     }
 
-    fun create(
-        context: Context,
-        onAttributionClickListener: OnAttributionClickListener?,
-        onLicenseClickListener: OnLicenseClickListener?
-    ): AttributionPresenter {
+    fun create(context: Context, onAttributionClickListener: OnAttributionClickListener?, onLicenseClickListener: OnLicenseClickListener?): Attributor {
         return createBaseAttributions(context)
             .setOnAttributionClickListener(onAttributionClickListener)
             .setOnLicenseClickListener(onLicenseClickListener)
             .build()
     }
 
-    fun create(context: Context, itemLayout: Int, licenseLayout: Int): AttributionPresenter {
+    fun create(context: Context, itemLayout: Int, licenseLayout: Int): Attributor {
         return createBaseAttributions(context)
             .setItemLayout(itemLayout)
             .setLicenseLayout(licenseLayout)

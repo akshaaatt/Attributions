@@ -11,6 +11,7 @@ class Attribution private constructor(
     val licensesInfo: List<LicenseInfo>,
     val website: String
 ) : Comparable<Attribution> {
+
     val formattedCopyrightNotices: String
         get() {
             val builder = StringBuilder()

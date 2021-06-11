@@ -16,11 +16,10 @@ import com.limerse.attributor.listeners.OnLicenseClickListener
 import com.limerse.attributor.util.BrowserOpener.open
 import java.util.*
 
-
 /**
  * Adapter used to show attributions on a ListView.
  */
-class AttributionAdapter internal constructor(
+class AttributorAdapter constructor(
     attributions: Collection<Attribution>,
     @LayoutRes itemLayout: Int,
     @LayoutRes licenseLayout: Int,
@@ -63,14 +62,10 @@ class AttributionAdapter internal constructor(
             holder.copyrightNotices =
                 convertView.findViewById<View>(R.id.copyrightNotices) as TextView
             holder.licensesLayout = convertView.findViewById<View>(R.id.licensesLayout) as ViewGroup
-            check(!(holder.name == null || holder.copyrightNotices == null || holder.licensesLayout == null)) {
-                """Item layout must contain all of the following required views:
-  - TextView with android:id="@+id/name"
-  - TextView with android:id="@+id/copyrightNotices"
-  - ViewGroup descendant with android:id="@+id/licensesLayout""""
-            }
+            check(!(holder.name == null || holder.copyrightNotices == null || holder.licensesLayout == null))
             convertView.tag = holder
-        } else {
+        }
+        else {
             holder = convertView.tag as ViewHolder
         }
         val attribution = getItem(position)

@@ -18,6 +18,7 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
         val list = findViewById<View>(R.id.list) as ListView
+
         list.adapter = create(this,
             object : OnAttributionClickListener {
                 override fun onAttributionClick(attribution: Attribution?): Boolean {

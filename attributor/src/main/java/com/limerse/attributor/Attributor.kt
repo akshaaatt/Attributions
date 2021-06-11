@@ -14,7 +14,7 @@ import java.util.*
 /**
  * Class to present a view to show license attributions.
  */
-class AttributionPresenter private constructor(
+class Attributor private constructor(
     private val context: Context,
     private val attributions: SortedSet<Attribution>,
     @LayoutRes itemLayout: Int,
@@ -26,7 +26,7 @@ class AttributionPresenter private constructor(
     private val licenseLayout: Int
     private val onAttributionClickListener: OnAttributionClickListener?
     private val onLicenseClickListener: OnLicenseClickListener?
-    private var attributionAdapter: AttributionAdapter? = null
+    private var attributorAdapter: AttributorAdapter? = null
 
     /**
      * Show a dialog with the configured attributions.
@@ -46,10 +46,10 @@ class AttributionPresenter private constructor(
      *
      * @return
      */
-    val adapter: AttributionAdapter
+    val adapter: AttributorAdapter
         get() {
-            if (attributionAdapter == null) {
-                attributionAdapter = AttributionAdapter(
+            if (attributorAdapter == null) {
+                attributorAdapter = AttributorAdapter(
                     attributions,
                     itemLayout,
                     licenseLayout,
@@ -57,7 +57,7 @@ class AttributionPresenter private constructor(
                     onLicenseClickListener
                 )
             }
-            return attributionAdapter!!
+            return attributorAdapter!!
         }
 
     class Builder(private val context: Context) {
@@ -126,8 +126,8 @@ class AttributionPresenter private constructor(
             return this
         }
 
-        fun build(): AttributionPresenter {
-            return AttributionPresenter(
+        fun build(): Attributor {
+            return Attributor(
                 context,
                 attributions,
                 itemLayout,

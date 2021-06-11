@@ -11,6 +11,7 @@ class DarkListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
+
         val list = findViewById<View>(R.id.list) as ListView
         list.adapter = create(this).adapter
     }
