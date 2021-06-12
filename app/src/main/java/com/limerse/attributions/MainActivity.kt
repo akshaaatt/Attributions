@@ -16,23 +16,23 @@ class MainActivity : AppCompatActivity() {
 
         val attributionHelper = create(this)
 
-        val openDialog = findViewById<View>(R.id.openDialog) as Button
+        val openDialog = findViewById<View>(R.id.openDialog)
 
         openDialog.setOnClickListener {
             attributionHelper.showDialog(getString(R.string.attributions))
         }
 
-        val openActivity = findViewById<View>(R.id.openActivity) as Button
+        val openActivity = findViewById<View>(R.id.openActivity)
         openActivity.setOnClickListener {
             val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
         }
-        val openDarkActivity = findViewById<View>(R.id.openDarkActivity) as Button
+        val openDarkActivity = findViewById<View>(R.id.openDarkActivity)
         openDarkActivity.setOnClickListener {
             val intent = Intent(this, DarkListActivity::class.java)
             startActivity(intent)
         }
-        val openCustomActivity = findViewById<View>(R.id.openCustomActivity) as Button
+        val openCustomActivity = findViewById<View>(R.id.openCustomActivity)
         openCustomActivity.setOnClickListener {
             val intent = Intent(this, CustomListActivity::class.java)
             startActivity(intent)

@@ -3,4 +3,8 @@
     <string name="app_name">Attributions</string>
 
     <string name="attributions">Open Source Licenses</string>
+    <string name="dialog">Show Dialog</string>
+    <string name="open_activity">Open Activity</string>
+    <string name="dark_theme_activity">Dark Theme Activity</string>
+    <string name="custom_theme_activity">Custom Theme Activity</string>
 </resources>

@@ -25,6 +25,8 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'com.google.android.material:material:1.4.0-rc01'
 
     implementation project(':attributor')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
