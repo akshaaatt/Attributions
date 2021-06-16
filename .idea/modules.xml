@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AttributionPresenter.iml" filepath="$PROJECT_DIR$/.idea/modules/AttributionPresenter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AttributionPresenter.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AttributionPresenter.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attributor/AttributionPresenter.attributor.iml" filepath="$PROJECT_DIR$/.idea/modules/attributor/AttributionPresenter.attributor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Attributions.iml" filepath="$PROJECT_DIR$/.idea/modules/Attributions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Attributions.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Attributions.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/attributor/Attributions.attributor.iml" filepath="$PROJECT_DIR$/.idea/modules/attributor/Attributions.attributor.iml" />
     </modules>
   </component>
 </project>
