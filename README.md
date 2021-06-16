@@ -18,7 +18,7 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.akshaaatt:Attributions:1.0.0'
+    implementation 'com.github.akshaaatt:Attributions:1.0.1'
 }
 ```
 
