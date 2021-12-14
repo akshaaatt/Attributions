@@ -1,4 +1,4 @@
-package com.limerse.attributor.entities
+package com.aemerse.attributor.entities
 
 import java.util.*
 

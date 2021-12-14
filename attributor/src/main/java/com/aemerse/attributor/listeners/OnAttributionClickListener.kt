@@ -1,6 +1,6 @@
-package com.limerse.attributor.listeners
+package com.aemerse.attributor.listeners
 
-import com.limerse.attributor.entities.Attribution
+import com.aemerse.attributor.entities.Attribution
 
 /**
  * Interface definition for a callback to be invoked when the attribution item is clicked.

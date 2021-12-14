@@ -1,4 +1,4 @@
-package com.limerse.attributor
+package com.aemerse.attributor
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,12 +8,12 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.annotation.Nullable
-import com.limerse.attributions.R
-import com.limerse.attributor.entities.Attribution
-import com.limerse.attributor.entities.LicenseInfo
-import com.limerse.attributor.listeners.OnAttributionClickListener
-import com.limerse.attributor.listeners.OnLicenseClickListener
-import com.limerse.attributor.util.BrowserOpener.open
+import com.aemerse.attributions.R
+import com.aemerse.attributor.entities.Attribution
+import com.aemerse.attributor.entities.LicenseInfo
+import com.aemerse.attributor.listeners.OnAttributionClickListener
+import com.aemerse.attributor.listeners.OnLicenseClickListener
+import com.aemerse.attributor.util.BrowserOpener.open
 import java.util.*
 
 /**

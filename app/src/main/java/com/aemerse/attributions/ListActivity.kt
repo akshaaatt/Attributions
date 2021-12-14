@@ -1,16 +1,16 @@
-package com.limerse.attributions
+package com.aemerse.attributions
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.ListView
 import android.widget.Toast
-import com.limerse.attributor.entities.Attribution
-import com.limerse.attributor.entities.LicenseInfo
-import com.limerse.attributor.listeners.OnAttributionClickListener
-import com.limerse.attributor.listeners.OnLicenseClickListener
-import com.limerse.attributions.AttributionPresenterCreator.create
-import com.limerse.attributions.sample.R
+import com.aemerse.attributor.entities.Attribution
+import com.aemerse.attributor.entities.LicenseInfo
+import com.aemerse.attributor.listeners.OnAttributionClickListener
+import com.aemerse.attributor.listeners.OnLicenseClickListener
+import com.aemerse.attributions.AttributionPresenterCreator.create
+import com.aemerse.attributions.sample.R
 
 class ListActivity : AppCompatActivity() {
 

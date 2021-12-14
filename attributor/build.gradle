@@ -1,17 +1,14 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'maven-publish'
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
-
+    compileSdk 31
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0.0"
+        minSdk 21
+        targetSdk 31
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
@@ -26,9 +23,24 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
 
     testImplementation 'junit:junit:4.13.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.aemerse'
+                artifactId = 'Attributions'
+                version = '1.0.2'
+            }
+        }
+    }
 }

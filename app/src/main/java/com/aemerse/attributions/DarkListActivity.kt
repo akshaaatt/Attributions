@@ -1,11 +1,11 @@
-package com.limerse.attributions
+package com.aemerse.attributions
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.ListView
-import com.limerse.attributions.AttributionPresenterCreator.create
-import com.limerse.attributions.sample.R
+import com.aemerse.attributions.AttributionPresenterCreator.create
+import com.aemerse.attributions.sample.R
 
 class DarkListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

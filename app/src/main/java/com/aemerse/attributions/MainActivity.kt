@@ -1,12 +1,11 @@
-package com.limerse.attributions
+package com.aemerse.attributions
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
-import android.widget.Button
-import com.limerse.attributions.AttributionPresenterCreator.create
-import com.limerse.attributions.sample.R
+import com.aemerse.attributions.AttributionPresenterCreator.create
+import com.aemerse.attributions.sample.R
 
 class MainActivity : AppCompatActivity() {
 

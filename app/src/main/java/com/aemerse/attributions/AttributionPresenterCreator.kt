@@ -1,12 +1,12 @@
-package com.limerse.attributions
+package com.aemerse.attributions
 
 import android.content.Context
-import com.limerse.attributor.entities.Attribution
-import com.limerse.attributor.entities.Library
-import com.limerse.attributor.entities.License
-import com.limerse.attributor.listeners.OnAttributionClickListener
-import com.limerse.attributor.listeners.OnLicenseClickListener
-import com.limerse.attributor.Attributor
+import com.aemerse.attributor.entities.Attribution
+import com.aemerse.attributor.entities.Library
+import com.aemerse.attributor.entities.License
+import com.aemerse.attributor.listeners.OnAttributionClickListener
+import com.aemerse.attributor.listeners.OnLicenseClickListener
+import com.aemerse.attributor.Attributor
 
 object AttributionPresenterCreator {
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.limerse.attributions.sample">
+    package="com.aemerse.attributions.sample">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.limerse.attributions.MainActivity">
+        <activity android:name="com.aemerse.attributions.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,22 +19,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.limerse.attributions.ListActivity"
+            android:name="com.aemerse.attributions.ListActivity"
             android:label="@string/attributions"
-            android:parentActivityName="com.limerse.attributions.MainActivity"
+            android:parentActivityName="com.aemerse.attributions.MainActivity"
             tools:targetApi="jelly_bean" />
 
         <activity
-            android:name="com.limerse.attributions.DarkListActivity"
+            android:name="com.aemerse.attributions.DarkListActivity"
             android:label="@string/attributions"
-            android:parentActivityName="com.limerse.attributions.MainActivity"
+            android:parentActivityName="com.aemerse.attributions.MainActivity"
             android:theme="@style/Theme.AppCompat"
             tools:targetApi="jelly_bean" />
 
         <activity
-            android:name="com.limerse.attributions.CustomListActivity"
+            android:name="com.aemerse.attributions.CustomListActivity"
             android:label="@string/attributions"
-            android:parentActivityName="com.limerse.attributions.MainActivity"
+            android:parentActivityName="com.aemerse.attributions.MainActivity"
             tools:targetApi="jelly_bean" />
     </application>
 

@@ -1,6 +1,6 @@
-package com.limerse.attributor.listeners
+package com.aemerse.attributor.listeners
 
-import com.limerse.attributor.entities.LicenseInfo
+import com.aemerse.attributor.entities.LicenseInfo
 
 /**
  * Interface definition for a callback to be invoked when a license view is clicked.

@@ -1,14 +1,14 @@
-package com.limerse.attributor
+package com.aemerse.attributor
 
 import android.app.Dialog
 import android.content.Context
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
-import com.limerse.attributions.R
-import com.limerse.attributor.entities.Attribution
-import com.limerse.attributor.entities.Library
-import com.limerse.attributor.listeners.OnAttributionClickListener
-import com.limerse.attributor.listeners.OnLicenseClickListener
+import com.aemerse.attributions.R
+import com.aemerse.attributor.entities.Attribution
+import com.aemerse.attributor.entities.Library
+import com.aemerse.attributor.listeners.OnAttributionClickListener
+import com.aemerse.attributor.listeners.OnLicenseClickListener
 import java.util.*
 
 /**

@@ -1,4 +1,4 @@
-package com.limerse.attributor.util
+package com.aemerse.attributor.util
 
 import android.content.Intent
 import android.content.ActivityNotFoundException

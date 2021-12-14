@@ -1,4 +1,4 @@
-package com.limerse.attributor.entities
+package com.aemerse.attributor.entities
 
 /**
  * An enumeration of common Android libraries with their Attribution information.

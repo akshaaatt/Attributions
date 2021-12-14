@@ -1,4 +1,4 @@
-package com.limerse.attributor.entities
+package com.aemerse.attributor.entities
 
 class LicenseInfo constructor(val name: String, val textUrl: String) {
     override fun toString(): String {
